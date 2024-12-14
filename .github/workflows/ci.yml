@@ -24,13 +24,13 @@ jobs:
       - name: Jenkins plugins download
         id: jenkins_plugins_download
         uses:
-          jenkinsci/jfr-plugin-installation-action@master
+          blaffitte-experiments/jfr-plugin-installation-action@master
         with:
           pluginstxt: plugins.txt
       - name: Run Jenkins pipeline
         id: run_jenkins_pipeline
         uses:
-          jenkinsci/jfr-runtime-action@master
+          blaffitte-experiments/jfr-runtime-action@master
         with:
           command: run
           jenkinsfile: Jenkinsfile
