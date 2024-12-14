@@ -3,7 +3,7 @@ description: 'Install the Jenkins core, Jenkinsfile-runner, plugin-installation-
 inputs:
   jenkins-version:
     description: 'The version of jenkins core to download. Default is 2.346.1.'
-    default: 2.346.1
+    default: 2.489
     required: false
   jenkins-root:
     description: 'The Jenkins root directory.'
@@ -11,11 +11,11 @@ inputs:
     required: false
   jenkins-pm-version:
     description: 'The version of plugin installation manager to use.'
-    default: 2.5.0
+    default: 2.13.2
     required: false
   jfr-version:
     description: 'The version of Jenkinsfile-runner to use.'
-    default: 1.0-beta-30
+    default: 1.0-beta-32
     required: false
   jenkins-pm-url:
     description: 'The download url of plugin installation manager.'
@@ -34,8 +34,8 @@ runs:
   steps:
     - uses: actions/setup-java@v3
       with:
-        distribution: 'adopt'
-        java-version: '11'  
+        distribution: 'temurin'
+        java-version: '21'  
     - name: Download Jenkins binaries
       run: ${GITHUB_ACTION_PATH}/setup.sh
       env:
